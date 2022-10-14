@@ -5,7 +5,13 @@ function ratingStars () {
     };
 }
 function ratingStarClickHandler (index, event) {
-    console.log (event.target.previousElementSibling);
+    //console.log (event.target.previousElementSibling);
+    if (event){
+        let star = event.target.parentElement.children;
+         for (let j = 0; j <star.length; j++) {
+             star[j].style.backgroundColor = 'transparent';
+         }
+    }
     if (event.target.previousElementSibling !== null) {
         for (let j = 0; j <= index; j++) {
             ratingStarElement ( 'star')[j].style.backgroundColor = '#B58B00';
